@@ -1,0 +1,70 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h3>Create a New Listing</h3>
+            <br><br />
+            <form method = "POST" action = "/listings"  novalidate class="needs-validation" enctype="multipart/form-data">
+                
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input name = "listing[title]" placeholder="add a catchy title" type ="text" class="form-control" required/>
+                    <div class="valid-feedback">Title looks good!</div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label><br>
+                    <textarea name = "listing[description]" class="form-control" required></textarea>
+                    <div class="invalid-feedback">Please enter a short description</div>
+                </div><br>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">Upload Listing Image</label>
+                    <input name = "listing[image]" type ="file" class="form-control" />
+                </div>
+                
+                <!-- <div class="mb-3">
+                    <label for="category" class="form-label">Select a Category:</label>
+                    <select name="listing[category]" id="category" class="form-select" required>
+                        <option value="Trending">🔥 Trending</option>
+                        <option value="Rooms">🛏️ Rooms</option>
+                        <option value="Iconic Cities">🏙️ Iconic Cities</option>
+                        <option value="Mountains">⛰️ Mountains</option>
+                        <option value="Castles">🏰 Castles</option>
+                        <option value="Amazing Pools">🏊 Amazing Pools</option>
+                        <option value="Camping">⛺ Camping</option>
+                        <option value="Farms">🚜 Farms</option>
+                        <option value="Arctic">❄️ Arctic</option>
+                    </select>
+                </div> -->
+
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="price" class="form-label">Price</label><br>
+                        <input name = "listing[price]" placeholder="1200"  class="form-control" required>
+                        <div class="invalid-feedback">Price should be valid</div>
+                    </div>
+
+                    <div class="mb-3 col-md-8">
+                        <label for="country" class="form-label">Country</label>
+                        <input name = "listing[country]" placeholder="India" type ="text" class="form-control" required>
+                        <div class="invalid-feedback">Country name should be valid</div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input name = "listing[location]" placeholder="Jaipur, Rajasthan" type ="text" class="form-control" required>
+                    <div class="invalid-feedback">Location should be valid</div>
+                </div>
+            
+                
+                <br> <br />
+                <button class="btn btn-dark add-btn"> Add</button>
+                <br> <br/>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
