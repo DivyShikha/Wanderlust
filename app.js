@@ -68,9 +68,10 @@ async function main(){
     await mongoose.connect(dbUrl);
 }
 
-// app.get("/", (req, res)=>{
-//     res.send("the root dir, is working!");
-// });
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
+
 
 app.use(session(sessionOptions));
 app.use(flash());
